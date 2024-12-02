@@ -16,6 +16,10 @@ export default {
           100: "#D8E9E4",
         },
         success: "#49A569",
+        grey: {
+          100: "#BBC2C0",
+          300: "#939494",
+        },
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         card: {
