@@ -2,14 +2,9 @@
 
 import PostListItem from "@/components/postListItem";
 import useGetPosts from "@/hooks/useGetPosts";
-import { useEffect } from "react";
 
 export default function Home() {
   const { data } = useGetPosts();
-
-  useEffect(() => {
-    console.log({ data });
-  }, [data]);
 
   return (
     <div className="py-8 px-4">
@@ -22,6 +17,7 @@ export default function Home() {
               userId={post.userId}
               tag={post.tag}
               postId={post.id}
+              commentsCount={post.commentsCount}
             />
           ))
         ) : (

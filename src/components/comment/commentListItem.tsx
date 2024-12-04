@@ -1,6 +1,10 @@
-import { Avatar, AvatarFallback } from "../ui/avatar"
+import { Avatar, AvatarFallback } from "../ui/avatar";
 
-const CommentListItem = () => {
+interface ICommentListItemProps {
+  content: string;
+}
+
+const CommentListItem = ({ content }: ICommentListItemProps) => {
   return (
     <div>
       <div className="flex items-center gap-2 mb-2">
@@ -9,9 +13,9 @@ const CommentListItem = () => {
         </Avatar>
         <h1>{"PERTH"}</h1>
       </div>
-      <p className="ml-10 text-xs">Lorem ipsum dolor sit amet consectetur. Purus cursus vel est a pretium quam imperdiet. Tristique auctor sed semper nibh odio iaculis sed aliquet. Amet mollis eget morbi feugiat mi risus eu. Tortor sed sagittis convallis auctor.</p>
+      <p className="ml-10 text-xs">{content}</p>
     </div>
-  )
-}
+  );
+};
 
-export default CommentListItem
+export default CommentListItem;

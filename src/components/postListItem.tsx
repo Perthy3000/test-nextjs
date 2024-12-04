@@ -8,9 +8,10 @@ interface IPostProps {
   userId: number;
   tag: string;
   postId: number;
+  commentsCount: number;
 }
 
-const PostListItem = ({ title, userId, tag, postId }: IPostProps) => {
+const PostListItem = ({ title, userId, tag, postId, commentsCount }: IPostProps) => {
   const { data: user } = useGetUser(userId);
 
   return (
@@ -32,7 +33,7 @@ const PostListItem = ({ title, userId, tag, postId }: IPostProps) => {
           <p className="text-xs">description</p>
         </div>
         <div>
-          <p className="text-xs text-grey-300">Comments</p>
+          <p className="text-xs text-grey-300">{commentsCount} Comments</p>
         </div>
       </div>
     </Link>

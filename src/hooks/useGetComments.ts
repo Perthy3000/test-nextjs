@@ -1,7 +1,7 @@
 import { axiosInstance } from "@/lib/axios";
 import { useQuery } from "@tanstack/react-query";
 
-export type Comments = {
+export type Comment = {
   id: number;
   content: string;
   createdAt: string;
@@ -12,7 +12,7 @@ const useGetComments = (id: number) => {
   const query = useQuery({
     queryKey: ["comments", id],
     queryFn: async ({ queryKey }) => {
-      const res = await axiosInstance.get<Comments[]>(`/comments/${queryKey[1]}`);
+      const res = await axiosInstance.get<Comment[]>(`/comments/${queryKey[1]}`);
       return res.data;
     },
   });
